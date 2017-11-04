@@ -19,10 +19,10 @@ Please be aware that the third mode allows the customer to access the product im
 
 == Installation ==
 1. Upload the plugin\'s folder to the `/wp-content/plugins/` directory or install it through the integrated plugin installer    
-1. Activate the plugin through the \'Plugins\' menu in WordPress     
-1. Navigate to WooCommerce > Settings > Extra Options in your Dashboard
-1. Select from the dropdown how you want your orders to be autocompleted
-1. Activate Payment Data Transfer from your seller preferences on PayPal and copy the identity token that will appear into WooCommerce > Settings > Checkout > PayPal > PayPal Identity Token.
+2. Activate the plugin through the \'Plugins\' menu in WordPress     
+3. Navigate to WooCommerce > Settings > Extra Options in your Dashboard
+4. Select from the dropdown how you want your orders to be autocompleted
+5. Activate Payment Data Transfer from your seller preferences on PayPal and copy the identity token that will appear into WooCommerce > Settings > Checkout > PayPal > PayPal Identity Token.
 
 == Frequently Asked Questions ==
 = The plugin is not working =
@@ -33,15 +33,6 @@ Please test the followings:
 
 = SSL Error =
 An update that PayPal rolled out a few months ago introduced this issue in WooCommerce for many users. Please follow this thread and the recommendation enclosed: https://wordpress.org/support/topic/ssl-error-for-paypal/
-
-== Screenshots ==
-1. Set the products as "Virtual" products
-2. In your PayPal account browse "Seller preferences" under "Selling Tools"
-3. Click on "Instant Payment Notifications"
-4. Activate IPN notifications and insert the link as in the picture (using your own domain name)
-5. Ensure that your main email is the same email you are using to receive payments
-6. Browse WooCommerce > Settings > Extra Options
-7. Pick the mode that suits you best
 
 == Changelog ==
 
