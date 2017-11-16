@@ -1,5 +1,5 @@
 # Autocomplete WooCommerce Orders
-Instantly autocomplete any virtual product paid using online payment (like PayPal and SagePay), while leaving BACS (pay by invoice) for manual completion upon payment received.
+Autocomplete any paid orders by simply activating this plugin. If the user sucessfully purchases a product using a payment gateway such as PayPal or eBay, this plugin will automatically complete the order. Orders that are not paid (such as BACS, cheque etc) will be left untouched.
 
 ## How does it work?
 
