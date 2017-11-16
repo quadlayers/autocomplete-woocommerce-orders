@@ -1,5 +1,5 @@
 # Autocomplete WooCommerce Orders
-Install this plugin and automatically complete your WooCommerce orders automatically.
+Instantly autocomplete any virtual product paid using online payment (like PayPal and SagePay), while leaving BACS (pay by invoice) for manual completion upon payment received.
 
 ## How does it work?
 
