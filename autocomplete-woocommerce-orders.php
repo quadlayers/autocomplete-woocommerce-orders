@@ -25,7 +25,7 @@ if ( ! class_exists( 'ACO' ) ) {
  *
  * Returns the main instance of ACO to prevent the need to use globals.
  *
- * @since  1.1
+ * @since  1.0
  * @return ACO
  */
 function aco() {

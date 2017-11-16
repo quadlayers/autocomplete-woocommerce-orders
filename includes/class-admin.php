@@ -5,7 +5,7 @@
  * @author   LiamMcArthur
  * @category ACO
  * @package  Autocomplete Woocommerce Orders
- * @since    1.1.0
+ * @since    1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

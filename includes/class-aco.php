@@ -5,7 +5,7 @@
  * @author   LiamMcArthur
  * @category ACO
  * @package  Autocomplete Woocommerce Orders
- * @since    1.1.0
+ * @since    1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main ACO Class.
  *
  * @class ACO
- * @version	1.1.0
+ * @version	1.0.0
  */
 final class ACO {
 
@@ -24,7 +24,7 @@ final class ACO {
 	 * The single instance of the class.
 	 *
 	 * @var ACO
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	protected static $_instance = null;
 
@@ -33,7 +33,7 @@ final class ACO {
 	 *
 	 * Ensures only one instance of ACO is loaded or can be loaded.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @static
 	 * @see ACO()
 	 * @return ACO - Main instance.
@@ -48,7 +48,7 @@ final class ACO {
 	/**
 	 * Cloning is forbidden.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	public function __clone() {
 		wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'aco' ), '1.1' );
@@ -57,7 +57,7 @@ final class ACO {
 	/**
 	 * Unserializing instances of this class is forbidden.
 	 *
-	 * @since 2.1
+	 * @since 1.0
 	 */
 	public function __wakeup() {
 		wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'aco' ), '2.1' );
