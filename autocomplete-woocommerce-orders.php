@@ -6,7 +6,7 @@
  * Version: 1.1.0
  * Author: Liam McArthur
  * Author URI: https://www.silkwave.co.uk
- * Text Domain: autocomplete-woocommerce-orders
+ * Text Domain: autocomplete-woocommerce-orders.
  *
  * WC requires at least: 2.3
  * WC tested up to: 3.5.2
@@ -16,8 +16,8 @@
  */
 
 // Include the main ACO class.
-if ( ! class_exists( 'ACO' ) ) {
-	include_once dirname( __FILE__ ) . '/includes/class-aco.php';
+if (!class_exists('ACO')) {
+    include_once dirname(__FILE__).'/includes/class-aco.php';
 }
 
 /**
@@ -26,10 +26,12 @@ if ( ! class_exists( 'ACO' ) ) {
  * Returns the main instance of ACO to prevent the need to use globals.
  *
  * @since  1.0
+ *
  * @return ACO
  */
-function aco() {
-	return ACO::instance();
+function aco()
+{
+    return ACO::instance();
 }
 
 aco();
