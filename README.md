@@ -1,3 +1,4 @@
+[![StyleCI](https://github.styleci.io/repos/109495508/shield?branch=master)](https://github.styleci.io/repos/109495508)
 # Autocomplete WooCommerce Orders
 Autocomplete any paid orders by simply activating this plugin. If the user sucessfully purchases a product using a payment gateway such as PayPal or eBay, this plugin will automatically complete the order. Orders that are not paid (such as BACS, cheque etc) will be left untouched.
 
