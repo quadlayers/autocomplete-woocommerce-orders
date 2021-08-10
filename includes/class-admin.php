@@ -100,7 +100,7 @@ class ACO_Admin
     {
         $base = plugin_basename(__FILE__);
         if ($file == $base) {
-            $links[] = '<a href="admin.php?page=wc-settings&tab=silkwave_aco">' . __('Settings', 'woocommerce-autocomplete-orders') . '</a>';
+            $links[] = '<a href="admin.php?page=wc-settings&tab=silkwave_aco">' . __('Settings', 'autocomplete-woocommerce-orders') . '</a>';
         }
 
         return $links;
@@ -108,7 +108,7 @@ class ACO_Admin
 
     function silkwave_woocommerce_settings_tabs_array($settings_tabs)
     {
-        $settings_tabs[$this->id] = __('Autocomplete Orders', 'woocommerce-autocomplete-orders');
+        $settings_tabs[$this->id] = __('Autocomplete Orders', 'autocomplete-woocommerce-orders');
 
         return $settings_tabs;
     }
@@ -130,15 +130,15 @@ class ACO_Admin
     {
         $settings = array(
             'section_title' => array(
-                'name' => __('Autocomplete Orders', 'woocommerce-autocomplete-orders'),
+                'name' => __('Autocomplete Orders', 'autocomplete-woocommerce-orders'),
                 'type' => 'title',
                 'desc' => 'Activate the plugin selecting one option from the menu',
                 'id'   => 'wc_' . $this->id . '_section_title'
             ),
             'title'         => array(
-                'name'     => __('Mode', 'woocommerce-autocomplete-orders'),
+                'name'     => __('Mode', 'autocomplete-woocommerce-orders'),
                 'type'     => 'select',
-                'desc'     => __('Specify how you want the plugin to work.', 'woocommerce-autocomplete-orders'),
+                'desc'     => __('Specify how you want the plugin to work.', 'autocomplete-woocommerce-orders'),
                 'desc_tip' => true,
                 'default'  => 'off',
                 'id'       => 'wc_' . $this->id . '_mode',

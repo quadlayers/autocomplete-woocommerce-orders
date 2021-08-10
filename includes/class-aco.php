@@ -80,7 +80,7 @@ final class ACO
 		include_once dirname(__FILE__) . '/class-admin.php';
 	}
 
-	public function _action_links($links)
+	public function action_links($links)
 	{
 
 		$links[] = '<a target="_blank" href="' . ACO_DOCUMENTATION_URL . '">' . esc_html__('Documentation', 'autocomplete-woocommerce-orders') . '</a>';
@@ -89,13 +89,20 @@ final class ACO
 		return $links;
 	}
 
+
+	function i18n()
+	{
+		load_plugin_textdomain('autocomplete-woocommerce-orders', false, ACO_PLUGIN_DIR . '/languages/');
+	}
+
 	/**
 	 * ACO Constructor.
 	 */
 	public function __construct()
 	{
 
-		add_filter('plugin_action_links_' . plugin_basename(ACO_PLUGIN_FILE), array($this, '_action_links'));
+		add_filter('plugin_action_links_' . plugin_basename(ACO_PLUGIN_FILE), array($this, 'action_links'));
+		$this->i18n();
 		$this->includes();
 	}
 }

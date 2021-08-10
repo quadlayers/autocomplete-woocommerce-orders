@@ -2,10 +2,10 @@
 Contributors: quadlayers
 Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
 Requires at least: 3.4
-Tested up to: 5.5.1
-Stable tag: 1.3.2
+Tested up to: 5.8
+Stable tag: 1.3.8
 WC requires at least: 3.1.0
-WC tested up to: 4.5.2
+WC tested up to: 5.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,6 +48,24 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 1.3.8 =
+* WordPress compatibility
+
+= 1.3.7 =
+* WooCommerce compatibility
+
+= 1.3.6 =
+* WooCommerce compatibility
+
+= 1.3.5 =
+* WooCommerce compatibility
+
+= 1.3.4 =
+* Fixed i18n
+
+= 1.3.3 =
+* Fixed i18n
 
 = 1.3.2 =
 * New documentation links
