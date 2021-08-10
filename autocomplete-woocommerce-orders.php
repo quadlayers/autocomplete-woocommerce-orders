@@ -23,6 +23,8 @@ define('ACO_PLUGIN_FILE', __FILE__);
 
 define('ACO_PLUGIN_DIR', __DIR__ . DIRECTORY_SEPARATOR);
 
+define('ACO_PREFIX', 'ACO');
+
 define('ACO_WORDPRESS_URL', 'https://wordpress.org/plugins/autocomplete-woocommerce-orders/');
 
 define('ACO_REVIEW_URL', 'https://wordpress.org/support/plugin/autocomplete-woocommerce-orders/reviews/?filter=5#new-post');
@@ -41,6 +43,11 @@ define('ACO_GROUP_URL', 'https://www.facebook.com/groups/quadlayers');
 if (!class_exists('ACO')) {
 	include_once dirname(__FILE__) . '/includes/class-aco.php';
 }
+
+if (!class_exists('QL_Widget')) {
+	include_once(ACO_PLUGIN_DIR . 'includes/quadlayers/widget.php');
+}
+
 
 /**
  * Main instance of ACO.
