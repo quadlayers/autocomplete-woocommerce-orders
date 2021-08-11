@@ -111,7 +111,7 @@ class ACO_Suggestions_List_Table extends WP_Plugin_Install_List_Table
     wp_enqueue_script('plugin-install');
     wp_enqueue_script('thickbox');
     wp_enqueue_script('updates');
-    wp_localize_script('updates', 'pagenow', 'plugin-install-network');
+    // wp_localize_script('updates', 'pagenow', 'plugin-install-network');
 
     wp_reset_vars(array('tab'));
 
