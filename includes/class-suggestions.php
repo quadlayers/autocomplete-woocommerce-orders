@@ -1,19 +1,19 @@
 <?php
 
-namespace Perfect_Woocommerce_Brands;
-
 require_once(ABSPATH . 'wp-admin/includes/class-wp-plugin-install-list-table.php');
 
-class ACO_Suggestions_List_Table extends \WP_Plugin_Install_List_Table
+class ACO_Suggestions_List_Table extends WP_Plugin_Install_List_Table
 {
 
   public $promote = array(
     'woocommerce-checkout-manager',
     'woocommerce-direct-checkout',
+    'perfect-woocommerce-brands',
     'wp-whatsapp-chat',
-    'wp-tiktok-feed',
     'insta-gallery',
+    'wp-menu-icons',
     'quadmenu',
+    'wp-tiktok-feed',
   );
 
   private function remove_plugins($plugins)
@@ -75,7 +75,7 @@ class ACO_Suggestions_List_Table extends \WP_Plugin_Install_List_Table
   public function get_plugins()
   {
 
-    $tk = PWB_PREFIX . '_suggestions_plugins';
+    $tk = ACO_PREFIX . '_suggestions_plugins';
 
     $plugins = get_transient($tk);
 
@@ -142,12 +142,8 @@ class ACO_Suggestions_List_Table extends \WP_Plugin_Install_List_Table
     $this->items = $this->get_plugins();
 
 
-    wp_localize_script(
-      'updates',
-      '_wpUpdatesItemCounts',
-      array(
-        'totals' => wp_get_update_data()
-      )
-    );
+    wp_localize_script('updates', '_wpUpdatesItemCounts', array(
+      'totals' => wp_get_update_data()
+    ));
   }
 }

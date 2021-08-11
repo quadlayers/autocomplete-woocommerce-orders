@@ -41,7 +41,7 @@ class QL_Widget
             <div>
                 <div style="margin-top: 11px;float: left;width: 70%;">
                     <?php esc_html_e('Hi! We are Quadlayers! Welcome to QuadLayers! We’re a team of international people who have been working in the WordPress sphere for the last ten years.', 'autocomplete-woocommerce-orders'); ?>
-                    <div style="margin-top: 11px; float: left; width: 70%;"><a href="<?php echo admin_url('admin.php?page=' . 'autocomplete-woocommerce-orders' . '_suggestions'); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('More products', 'autocomplete-woocommerce-orders'); ?></a></div>
+                    <div style="margin-top: 11px; float: left; width: 70%;"><a href="<?php echo admin_url('admin.php?page=' . ACO_PREFIX . '_suggestions'); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('More products', 'autocomplete-woocommerce-orders'); ?></a></div>
                 </div>
                 <img style="width: 30%;margin-top: 11px;float: right; max-width: 95px;" src="<?php echo plugins_url('/assets/backend/img/quadlayers.jpg', ACO_PLUGIN_FILE); ?>" />
             </div>
@@ -81,8 +81,8 @@ class QL_Widget
             </ul>
         </div>
         <div style="display: flex; justify-content: space-between;align-items: center;margin: 16px -12px 0;padding: 12px 12px 0; border-top: 1px solid #eee;">
-            <a href="<?php printf('https://quadlayers.com/blog/?utm_source=%s&utm_medium=software&utm_campaign=wordpress&utm_content=dashboard', 'autocomplete-woocommerce-orders'); ?>" target="_blank"><?php esc_html_e('Read more like this on our blog', 'autocomplete-woocommerce-orders') ?></a>
-            <a class="button-primary" href="<?php printf('https://quadlayers.com/?utm_source=%s&utm_medium=software&utm_campaign=wordpress&utm_content=dashboard', 'autocomplete-woocommerce-orders'); ?>" target="_blank"><?php esc_html_e('QuadLayers', 'autocomplete-woocommerce-orders') ?></a>
+            <a href="<?php printf('https://quadlayers.com/blog/?utm_source=%s&utm_medium=software&utm_campaign=wordpress&utm_content=dashboard', ACO_PREFIX); ?>" target="_blank"><?php esc_html_e('Read more like this on our blog', 'autocomplete-woocommerce-orders') ?></a>
+            <a class="button-primary" href="<?php printf('https://quadlayers.com/?utm_source=%s&utm_medium=software&utm_campaign=wordpress&utm_content=dashboard', ACO_PREFIX); ?>" target="_blank"><?php esc_html_e('QuadLayers', 'autocomplete-woocommerce-orders') ?></a>
         </div>
 <?php
     }

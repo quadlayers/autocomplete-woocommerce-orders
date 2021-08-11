@@ -45,6 +45,8 @@ class ACO_Admin
                 $this,
                 'save_' . $this->id . '_field'
             ), 10);
+
+            include_once(ACO_PLUGIN_DIR . 'controller/suggestions.php');
         }
         add_filter('woocommerce_payment_complete_order_status', array($this, 'silkwave_autocomplete_orders'), -1, 2);
     }
