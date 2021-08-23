@@ -10,6 +10,7 @@ class ACO_Suggestions_List_Table extends WP_Plugin_Install_List_Table
     'woocommerce-direct-checkout',
     'perfect-woocommerce-brands',
     'wp-whatsapp-chat',
+    'quadlayers-telegram-chat',
     'insta-gallery',
     'wp-menu-icons',
     'quadmenu',
