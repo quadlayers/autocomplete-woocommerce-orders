@@ -50,7 +50,7 @@ Please test the followings:
 == Changelog ==
 
 = 1.4.2 =
-* WooCommerce compatibility
+* WordPress compatibility
 
 = 1.4.1 =
 * New Telegram add to suggestions tab
