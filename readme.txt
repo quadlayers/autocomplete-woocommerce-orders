@@ -3,7 +3,7 @@ Contributors: quadlayers
 Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
 Requires at least: 3.4
 Tested up to: 5.8
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 WC requires at least: 3.1.0
 WC tested up to: 5.5
 License: GPLv3
@@ -48,6 +48,9 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 1.4.4 =
+* QuadLayers widget cache
 
 = 1.4.3 =
 * WordPress compatibility
