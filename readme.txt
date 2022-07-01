@@ -2,7 +2,7 @@
 Contributors: quadlayers
 Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
 Requires at least: 3.4
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: 1.5.3
 WC requires at least: 3.1.0
 WC tested up to: 6.6.1
