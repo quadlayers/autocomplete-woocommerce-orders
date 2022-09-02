@@ -4,7 +4,7 @@
  * Plugin Name: Autocomplete WooCommerce Orders
  * Plugin URI:  https://wordpress.org/plugins/autocomplete-woocommerce-orders/
  * Description: Autocomplete your WooCommerce orders with ease. This plugins works with most major payment providers including PayPal, SagePay and Stripe.
- * Version:     1.5.7
+ * Version:     1.5.8
  * Author:      QuadLayers
  * Author URI:  https://quadlayers.com
  * License:     GPLv3
@@ -16,7 +16,7 @@
 
 
 define( 'ACO_PLUGIN_NAME', 'Autocomplete WooCommerce Orders' );
-define( 'ACO_PLUGIN_VERSION', '1.5.7' );
+define( 'ACO_PLUGIN_VERSION', '1.5.8' );
 define( 'ACO_PLUGIN_FILE', __FILE__ );
 define( 'ACO_PLUGIN_DIR', __DIR__ . DIRECTORY_SEPARATOR );
 define( 'ACO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -35,7 +35,7 @@ define( 'ACO_PREMIUM_SELL_URL', 'https://quadlayers.com/portfolio/woocommerce-di
 define( 'ACO_CROSS_INSTALL_SLUG', 'woocommerce-checkout-manager' );
 define( 'ACO_CROSS_INSTALL_NAME', 'Checkout Manager' );
 define( 'ACO_CROSS_INSTALL_DESCRIPTION', esc_html__( 'Checkout Field Manager( Checkout Manager ) for WooCommerce allows you to add custom fields to the checkout page, related to billing, Shipping or Additional fields sections.', 'woocommerce-direct-checkout' ) );
-define( 'ACO_CROSS_INSTALL_URL', 'https:// quadlayers.com/portfolio/woocommerce-checkout-manager/?utm_source=aco_admin' );
+define( 'ACO_CROSS_INSTALL_URL', 'https://quadlayers.com/portfolio/woocommerce-checkout-manager/?utm_source=aco_admin' );
 
 
 // Include the main ACO class.
