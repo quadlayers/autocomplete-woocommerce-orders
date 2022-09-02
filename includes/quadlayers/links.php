@@ -5,7 +5,7 @@ class ACO_Admin_Links {
 	protected static $_instance;
 
 	public function __construct() {
-		add_filter( 'plugin_action_links_' . plugin_basename( ACO_PLUGIN_FILE ), array( $this, 'add_action_links' ) );
+		add_filter( 'plugin_action_links_' . ACO_PLUGIN_BASENAME, array( $this, 'add_action_links' ) );
 	}
 
 	function add_action_links( $links ) {
