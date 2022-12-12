@@ -25,7 +25,7 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr "Haciendo trampa ¿eh?"
 
-#: includes/class-aco.php:86 includes/view/backend/tabs.php:4
+#: includes/class-aco.php:86 includes/backend/view/tabs.php:4
 msgid "Documentation"
 msgstr "Documentación"
 
@@ -46,11 +46,11 @@ msgid "Specify how you want the plugin to work."
 msgstr "Especifica como quieres que el plugin funcione."
 
 #. Author of the plugin/theme
-#: includes/view/backend/tabs.php:2
+#: includes/backend/view/tabs.php:2
 msgid "QuadLayers"
 msgstr "QuadLayers"
 
-#: includes/view/backend/tabs.php:3
+#: includes/backend/view/tabs.php:3
 msgid "Support"
 msgstr "Soporte"
 

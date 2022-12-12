@@ -3,7 +3,7 @@
 /**
  * ACO setup
  *
- * @author   LiamMcArthur
+ * @author   QuadLayers
  * @category ACO
  * @package  Autocomplete Woocommerce Orders
  * @since    1.0.0
@@ -53,7 +53,7 @@ final class ACO {
 	 * @since 1.0
 	 */
 	public function __clone() {
-		 wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'autocomplete-woocommerce-orders' ), '1.1' );
+		wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'autocomplete-woocommerce-orders' ), '1.1' );
 	}
 
 	/**
@@ -72,11 +72,32 @@ final class ACO {
 		/**
 		 * Interfaces.
 		 */
-		include_once dirname( __FILE__ ) . '/class-admin.php';
+		include_once dirname( __FILE__ ) . '/backend/class-settings.php';
+		include_once dirname( __FILE__ ) . '/frontend/class-frontend.php';
 	}
 
 	function i18n() {
 		load_plugin_textdomain( 'autocomplete-woocommerce-orders', false, ACO_PLUGIN_DIR . '/languages/' );
+	}
+
+	public static function add_premium_css() {
+		?>
+		<style>
+			.aco-premium-field {
+				opacity: 0.5; 
+				pointer-events: none;
+			}
+			.aco-premium-field .description {
+				display: block!important;
+			}
+		</style>
+		<script>
+			const fields = document.querySelectorAll('.aco-premium-field')
+			Array.from(fields).forEach((field)=> {
+				field.closest('tr')?.classList.add('aco-premium-field');
+			})
+		</script>
+		<?php
 	}
 
 	/**
@@ -85,5 +106,6 @@ final class ACO {
 	public function __construct() {
 		$this->i18n();
 		$this->includes();
+		add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
 	}
 }
