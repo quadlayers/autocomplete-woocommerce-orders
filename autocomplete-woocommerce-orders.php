@@ -30,7 +30,7 @@ define( 'ACO_GROUP_URL', 'https://www.facebook.com/groups/quadlayers' );
 
 define( 'ACO_PREMIUM_SELL_SLUG', 'autocomplete-woocommerce-orders-pro' );
 define( 'ACO_PREMIUM_SELL_NAME', 'Autocomplete WooCommerce Orders PRO' );
-define( 'ACO_PREMIUM_SELL_URL', 'https://quadlayers.com/portfolio/autocomplete-woocommerce-orders/?utm_source=aco_admin' );
+define( 'ACO_PREMIUM_SELL_URL', 'https://quadlayers.com/portfolio/woocommerce-autocomplete-orders/?utm_source=aco_admin' );
 
 define( 'ACO_CROSS_INSTALL_SLUG', 'woocommerce-checkout-manager' );
 define( 'ACO_CROSS_INSTALL_NAME', 'Checkout Manager' );
