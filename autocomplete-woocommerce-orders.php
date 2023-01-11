@@ -60,7 +60,7 @@ require_once __DIR__ . '/composer/wp-plugin-suggestions.php';
 /**
  * Load plugin classes
  */
-require_once 'lib/class-plugin.php';
+require_once 'lib/plugin.php';
 
 register_activation_hook(
 	ACO_PLUGIN_FILE,
