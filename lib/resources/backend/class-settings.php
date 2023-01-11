@@ -9,16 +9,20 @@
  * @since    1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+namespace QUADLAYERS\ACO\Resources\Backend;
+
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-class ACO_Settings {
+class Settings
+{
 
 	public $id = 'silkwave_aco';
 
-	function __construct() {
-		if ( is_admin() ) {
+	function __construct()
+	{
+		if (is_admin()) {
 			// add settings tab
 			add_filter(
 				'woocommerce_settings_tabs_array',
@@ -62,15 +66,13 @@ class ACO_Settings {
 				),
 				10
 			);
-
-			include_once ACO_PLUGIN_DIR . 'controller/suggestions.php';
 		}
 
 		add_filter(
 			'woocommerce_bacs_process_payment_order_status',
-			function( $order_status, $order ) {
-				$bacs_order_status = get_option( 'wc_' . $this->id . '_bacs_order_status' );
-				if ( $bacs_order_status ) {
+			function ($order_status, $order) {
+				$bacs_order_status = get_option('wc_' . $this->id . '_bacs_order_status');
+				if ($bacs_order_status) {
 					return $bacs_order_status;
 				}
 				return $order_status;
@@ -80,9 +82,9 @@ class ACO_Settings {
 		);
 		add_filter(
 			'woocommerce_cheque_process_payment_order_status',
-			function( $order_status, $order ) {
-				$cheque_order_status = get_option( 'wc_' . $this->id . '_cheque_order_status' );
-				if ( $cheque_order_status ) {
+			function ($order_status, $order) {
+				$cheque_order_status = get_option('wc_' . $this->id . '_cheque_order_status');
+				if ($cheque_order_status) {
 					return $cheque_order_status;
 				}
 				return $order_status;
@@ -92,16 +94,16 @@ class ACO_Settings {
 		);
 		add_filter(
 			'woocommerce_cod_process_payment_order_status',
-			function( $order_status, $order ) {
-				if ( $order->has_downloadable_item() ) {
-					$cod_order_status = get_option( 'wc_' . $this->id . '_cod_downloadable_order_status' );
-					if ( $cod_order_status ) {
+			function ($order_status, $order) {
+				if ($order->has_downloadable_item()) {
+					$cod_order_status = get_option('wc_' . $this->id . '_cod_downloadable_order_status');
+					if ($cod_order_status) {
 						return $cod_order_status;
 					}
 					return $order_status;
 				}
-				$cod_order_status = get_option( 'wc_' . $this->id . '_cod_order_status' );
-				if ( $cod_order_status ) {
+				$cod_order_status = get_option('wc_' . $this->id . '_cod_order_status');
+				if ($cod_order_status) {
 					return $cod_order_status;
 				}
 				return $order_status;
@@ -110,13 +112,14 @@ class ACO_Settings {
 			2
 		);
 
-		add_filter( 'woocommerce_payment_complete_order_status', array( $this, 'autocomplete_orders' ), -1, 2 );
+		add_filter('woocommerce_payment_complete_order_status', array($this, 'autocomplete_orders'), -1, 2);
 	}
 
-	public function autocomplete_orders( $order_status, $order_id ) {
-		$mode = get_option( 'wc_' . $this->id . '_mode' );
+	public function autocomplete_orders($order_status, $order_id)
+	{
+		$mode = get_option('wc_' . $this->id . '_mode');
 
-		switch ( $mode ) {
+		switch ($mode) {
 			case 'off':
 				$order_status = 'processing';
 				break;
@@ -125,89 +128,92 @@ class ACO_Settings {
 				$order_status = 'completed';
 				break;
 			case 'virtual':
-				$order = wc_get_order( $order_id );
+				$order = wc_get_order($order_id);
 
-				if ( $order && $order_status === 'processing' && in_array( $order->get_status(), array( 'pending', 'on-hold', 'failed' ), true ) ) {
+				if ($order && $order_status === 'processing' && in_array($order->get_status(), array('pending', 'on-hold', 'failed'), true)) {
 
 					$virtual = false;
 					$items   = $order->get_items();
 
-					if ( count( $items ) > 0 ) {
-						foreach ( $items  as $item ) {
-							if ( is_callable( array( $item, 'get_product' ) ) ) {
+					if (count($items) > 0) {
+						foreach ($items  as $item) {
+							if (is_callable(array($item, 'get_product'))) {
 								$product = $item->get_product();
-							} elseif ( is_callable( array( $order, 'get_product_from_item' ) ) ) {
-								$product = $order->get_product_from_item( $item );
+							} elseif (is_callable(array($order, 'get_product_from_item'))) {
+								$product = $order->get_product_from_item($item);
 							} else {
 								$product = null;
 							}
 
-							if ( ! $product->is_virtual() ) {
+							if (!$product->is_virtual()) {
 								$virtual = false;
 								break;
 							}
 							$virtual = true;
 						}
 					}
-					if ( $virtual ) {
+					if ($virtual) {
 						$order_status = 'completed';
 					}
 				}
 				break;
 				/**
-				* Preserve WooCommerce core functionality for virtual and downloadable products.
+				 * Preserve WooCommerce core functionality for virtual and downloadable products.
 				 */
 			case 'virtual_downloadable':
 				$order_status = 'completed' === $order_status ? 'completed' : 'processing';
 				break;
-
 		}
 		return $order_status;
 	}
 
-	function woocommerce_settings_tabs_array( $settings_tabs ) {
-		$settings_tabs[ $this->id ] = __( 'Autocomplete Orders', 'autocomplete-woocommerce-orders' );
+	function woocommerce_settings_tabs_array($settings_tabs)
+	{
+		$settings_tabs[$this->id] = __('Autocomplete Orders', 'autocomplete-woocommerce-orders');
 
 		return $settings_tabs;
 	}
 
-	function show_settings_tab() {
+	function show_settings_tab()
+	{
 		$settings = $this->get_settings();
 
 		require_once 'view/page.php';
 	}
 
-	function update_settings_tab() {
-		woocommerce_update_options( $this->get_settings() );
+	function update_settings_tab()
+	{
+		woocommerce_update_options($this->get_settings());
 	}
 
-	function get_settings() {
+	function get_settings()
+	{
 		$settings = array(
 			'section_title' => array(
-				'name' => __( 'Autocomplete Orders', 'autocomplete-woocommerce-orders' ),
+				'name' => __('Autocomplete Orders', 'autocomplete-woocommerce-orders'),
 				'type' => 'title',
 				'desc' => 'Activate the plugin selecting one option from the menu',
 				'id'   => 'wc_' . $this->id . '_section_title',
 			),
 			array(
-				'name'     => __( 'Mode', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Mode', 'autocomplete-woocommerce-orders'),
 				'type'     => 'select',
-				'desc'     => __( 'Specify how you want the plugin to work.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Specify how you want the plugin to work.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => 'virtual_downloadable',
 				'id'       => 'wc_' . $this->id . '_mode',
 				'css'      => 'height:auto;',
 				'options'  => array(
-					'off'                  => __( 'Off', 'autocomplete-woocommerce-orders' ),
-					'all'                  => __( 'All Orders', 'autocomplete-woocommerce-orders' ),
-					'virtual'              => __( 'Virtual Orders', 'autocomplete-woocommerce-orders' ),
-					'virtual_downloadable' => __( 'Virtual & Downloadable Orders', 'autocomplete-woocommerce-orders' ),
+					'off'                  => __('Off', 'autocomplete-woocommerce-orders'),
+					'all'                  => __('All Orders', 'autocomplete-woocommerce-orders'),
+					'virtual'              => __('Virtual Orders', 'autocomplete-woocommerce-orders'),
+					'virtual_downloadable' => __('Virtual & Downloadable Orders', 'autocomplete-woocommerce-orders'),
 				),
 			),
 			array(
-				'name'     => __( 'Direct bank transfer', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Direct bank transfer', 'autocomplete-woocommerce-orders'),
 				'type'     => 'select',
-				'desc'     => __( 'Default order status for Direct bank transfer orders.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Default order status for Direct bank transfer orders.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => '',
 				'id'       => 'wc_' . $this->id . '_bacs_order_status',
@@ -216,9 +222,9 @@ class ACO_Settings {
 				'class'    => 'aco-premium-field',
 			),
 			array(
-				'name'     => __( 'Check payments', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Check payments', 'autocomplete-woocommerce-orders'),
 				'type'     => 'select',
-				'desc'     => __( 'Default order status for Check payments orders.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Default order status for Check payments orders.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => '',
 				'id'       => 'wc_' . $this->id . '_cheque_order_status',
@@ -227,9 +233,9 @@ class ACO_Settings {
 				'class'    => 'aco-premium-field',
 			),
 			array(
-				'name'     => __( 'Cash on delivery', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Cash on delivery', 'autocomplete-woocommerce-orders'),
 				'type'     => 'select',
-				'desc'     => __( 'Default order status for Cash on delivery orders without downloadable items.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Default order status for Cash on delivery orders without downloadable items.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => 'processing',
 				'id'       => 'wc_' . $this->id . '_cod_order_status',
@@ -238,9 +244,9 @@ class ACO_Settings {
 				'class'    => 'aco-premium-field',
 			),
 			array(
-				'name'     => __( 'Cash on delivery (Downloadable)', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Cash on delivery (Downloadable)', 'autocomplete-woocommerce-orders'),
 				'type'     => 'select',
-				'desc'     => __( 'Default order status for Cash on delivery orders with downloadable items.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Default order status for Cash on delivery orders with downloadable items.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => '',
 				'id'       => 'wc_' . $this->id . '_cod_downloadable_order_status',
@@ -249,9 +255,9 @@ class ACO_Settings {
 				'class'    => 'aco-premium-field',
 			),
 			array(
-				'name'     => __( 'Add Payment Method', 'autocomplete-woocommerce-orders' ),
+				'name'     => __('Add Payment Method', 'autocomplete-woocommerce-orders'),
 				'type'     => 'checkbox',
-				'desc'     => __( 'Add payment method column in the orders table.', 'autocomplete-woocommerce-orders' ),
+				'desc'     => __('Add payment method column in the orders table.', 'autocomplete-woocommerce-orders'),
 				'desc_tip' => true,
 				'default'  => '',
 				'id'       => 'wc_' . $this->id . '_orders_payment_method',
@@ -263,23 +269,21 @@ class ACO_Settings {
 			),
 		);
 
-		return apply_filters( 'wc_' . $this->id . '_settings', $settings );
+		return apply_filters('wc_' . $this->id . '_settings', $settings);
 	}
 
-	function get_order_statuses() {
+	function get_order_statuses()
+	{
 
 		$arr            = array();
 		$order_statuses = wc_get_order_statuses();
 
-		$arr[''] = __( 'Select an order status', 'autocomplete-woocommerce-orders' );
+		$arr[''] = __('Select an order status', 'autocomplete-woocommerce-orders');
 
-		foreach ( $order_statuses as $key => $value ) {
-			$arr[ str_replace( 'wc-', '', $key ) ] = $value;
+		foreach ($order_statuses as $key => $value) {
+			$arr[str_replace('wc-', '', $key)] = $value;
 		}
 
 		return $arr;
-
 	}
 }
-
-new ACO_Settings();
