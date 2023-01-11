@@ -14,6 +14,9 @@
 	"phpcbf.documentFormattingProvider": true,
 	"phpcbf.onsave": true,
 	"phpcbf.standard": "WordPress",
+	"[php]": {
+		"editor.defaultFormatter": "persoderlind.vscode-phpcbf"
+	},
 	"intelephense.stubs": [
 		"apache",
 		"bcmath",
