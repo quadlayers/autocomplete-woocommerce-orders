@@ -5,6 +5,7 @@
  * @package  Autocomplete Woocommerce Orders
  * @since    1.0.0
  */
+namespace QuadLayers\ACO;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @class ACO
  * @version 1.0.0
  */
+
 class Plugin {
 
 	/**
@@ -41,8 +43,8 @@ class Plugin {
 		/**
 		 * Interfaces.
 		 */
-		include_once dirname( __FILE__ ) . '/backend/settings.php';
-		include_once dirname( __FILE__ ) . '/frontend/frontend.php';
+		include_once dirname( __FILE__ ) . '/backend/class-settings.php';
+		include_once dirname( __FILE__ ) . '/frontend/class-frontend.php';
 	}
 
 	/**

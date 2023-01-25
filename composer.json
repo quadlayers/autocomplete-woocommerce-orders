@@ -16,9 +16,9 @@
 		}
 	},
 	"autoload": {
-		"psr-4": {
-			"QuadLayers\\ACO\\": "lib/"
-		}
+		"classmap": [
+			"lib/"
+		]
 	},
 	"require": {
 		"automattic/jetpack-composer-plugin": "*",

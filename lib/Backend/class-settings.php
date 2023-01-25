@@ -5,6 +5,7 @@
  * @package  Autocomplete Woocommerce Orders
  * @since    1.0.0
  */
+namespace QuadLayers\ACO\Backend;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
