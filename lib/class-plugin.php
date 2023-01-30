@@ -7,6 +7,9 @@
  */
 namespace QuadLayers\ACO;
 
+use QuadLayers\ACO\Backend\Settings;
+use QuadLayers\ACO\Frontend\Frontend;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -32,19 +35,13 @@ class Plugin {
 	 * Construct
 	 */
 	private function __construct() {
-		$this->includes();
-		add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
-	}
-
-	/**
-	 * Include required core files used in admin and on the frontend.
-	 */
-	public function includes() {
 		/**
 		 * Interfaces.
 		 */
-		include_once dirname( __FILE__ ) . '/backend/class-settings.php';
-		include_once dirname( __FILE__ ) . '/frontend/class-frontend.php';
+		new Settings();
+		new Frontend();
+
+		add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
 	}
 
 	/**

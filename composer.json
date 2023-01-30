@@ -1,6 +1,6 @@
 {
-	"name": "quadlayers/plugin-init",
-	"description": "Plugin Init",
+	"name": "quadlayers/autocomplete-woocommerce-orders",
+	"description": "Autocomplete WooCommerce Orders",
 	"type": "project",
 	"authors": [
 		{
@@ -12,7 +12,8 @@
 	"config": {
 		"allow-plugins": {
 			"automattic/jetpack-composer-plugin": true,
-			"dealerdirect/phpcodesniffer-composer-installer": true
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"quadlayers/wp-autoload": true
 		}
 	},
 	"autoload": {
@@ -28,12 +29,21 @@
 		"quadlayers/wp-plugin-table-links": "*",
 		"quadlayers/wp-plugin-suggestions": "*"
 	},
+	"autoload-dev": {
+		"exclude-from-classmap": [
+			"lib/"
+		]
+	},
 	"extra": {
-		"wp-plugin-slug": "plugin-init"
+		"quadlayers/wp-autoload": {
+			"QuadLayers\\ACO\\": "lib/"
+		},
+		"wp-plugin-slug": "autocomplete-woocommerce-orders"
 	},
 	"require-dev": {
 		"woocommerce/woocommerce-sniffs": "^0.1.3",
-		"phpunit/phpunit": "^9.5"
+		"phpunit/phpunit": "^9.5",
+		"quadlayers/wp-autoload": "^1.0"
 	},
 	"scripts": {
 		"test:phpunit": "./vendor/bin/phpunit phpunit"

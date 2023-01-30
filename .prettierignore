@@ -5,4 +5,4 @@ vendor
 build
 test
 bin
-plugin-init
+autocomplete-woocommerce-orders

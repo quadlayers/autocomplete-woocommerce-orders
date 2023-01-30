@@ -316,5 +316,3 @@ class Settings {
 		return $arr;
 	}
 }
-
-new Settings();

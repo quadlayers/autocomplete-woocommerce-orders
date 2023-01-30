@@ -91,5 +91,3 @@ class Frontend {
 		return $order_status;
 	}
 }
-
-new Frontend();
