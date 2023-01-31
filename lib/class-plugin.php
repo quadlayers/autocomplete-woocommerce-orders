@@ -5,6 +5,7 @@
  * @package  Autocomplete Woocommerce Orders
  * @since    1.0.0
  */
+
 namespace QuadLayers\ACO;
 
 use QuadLayers\ACO\Backend\Settings;
@@ -20,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @class ACO
  * @version 1.0.0
  */
-
 class Plugin {
 
 	/**

@@ -5,6 +5,7 @@
  * @package  Autocomplete Woocommerce Orders
  * @since    2.0.0
  */
+
 namespace QuadLayers\ACO\Frontend;
 
 if ( ! defined( 'ABSPATH' ) ) {
