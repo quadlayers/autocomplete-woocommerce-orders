@@ -42,8 +42,6 @@ class Frontend {
 	public function autocomplete_orders( $order_status, $order_id ) {
 		$mode = get_option( 'wc_' . $this->id . '_mode' );
 
-		error_log( 'mode: ' . json_encode( $mode, JSON_PRETTY_PRINT ) );
-
 		switch ( $mode ) {
 			case 'off':
 				$order_status = 'processing';
