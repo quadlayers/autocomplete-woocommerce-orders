@@ -10,6 +10,9 @@
 	],
 	"minimum-stability": "stable",
 	"config": {
+		"platform": {
+			"php": "7.1.0"
+		},
 		"allow-plugins": {
 			"automattic/jetpack-composer-plugin": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
@@ -21,14 +24,6 @@
 			"lib/"
 		]
 	},
-	"require": {
-		"automattic/jetpack-composer-plugin": "*",
-		"automattic/jetpack-assets": "*",
-		"quadlayers/wp-dashboard-widget-news": "*",
-		"quadlayers/wp-notice-plugin-required": "*",
-		"quadlayers/wp-plugin-table-links": "*",
-		"quadlayers/wp-plugin-suggestions": "*"
-	},
 	"autoload-dev": {
 		"exclude-from-classmap": [
 			"lib/"
@@ -39,6 +34,15 @@
 			"QuadLayers\\ACO\\": "lib/"
 		},
 		"wp-plugin-slug": "autocomplete-woocommerce-orders"
+	},
+	"require": {
+		"php": ">=7.1.0",
+		"automattic/jetpack-composer-plugin": "*",
+		"automattic/jetpack-assets": "*",
+		"quadlayers/wp-dashboard-widget-news": "*",
+		"quadlayers/wp-notice-plugin-required": "*",
+		"quadlayers/wp-plugin-table-links": "*",
+		"quadlayers/wp-plugin-suggestions": "*"
 	},
 	"require-dev": {
 		"woocommerce/woocommerce-sniffs": "^0.1.3",

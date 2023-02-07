@@ -1,7 +1,7 @@
 {
 	"name": "autocomplete-woocommerce-orders",
-	"version": "2.0.3",
-	"description": "Autocomplete your WooCommerce orders with ease. This plugins works with most major payment providers including PayPal, SagePay and Stripe.",
+	"version": "3.0.0",
+	"description": "Autocomplete WooCommerce Orders",
 	"main": "index.js",
 	"scripts": {
 		"delete:build": "node ./bin/delete.js ./build",
@@ -27,7 +27,7 @@
 		"test:unit:php": "composer run-script test:phpunit",
 		"test:unit:js": "jest",
 		"test:unit": "npm run test:unit:js & npm run test:unit:php",
-		"test:e2e": "npm run docker start && playwright test",
+		"test:e2e": "npm run build:plugin && npm run docker start && playwright test",
 		"test": "npm run test:unit & npm run test:e2e",
 		"docker": "wp-env",
 		"start:js": "npm run delete:build && wp-scripts start",
@@ -35,6 +35,7 @@
 		"start": "npm run start:php && npm run start:js",
 		"phpcs:report:csv": "php ./vendor/bin/phpcs --warning-severity=0 --extensions=php --report=csv --report-file=./phpcs_error.csv ./lib",
 		"phpcs:report:txt": "php ./vendor/bin/phpcs --warning-severity=0 --extensions=php --report-file=./phpcs_error.txt ./lib",
+		"phpcs:report:autofix": "php ./vendor/bin/phpcbf ./lib",
 		"build:js": "npm run delete:build &&  wp-scripts build",
 		"build:php": "composer install --no-dev && composer dump-autoload -o --no-dev",
 		"build": "npm run build:js && npm run build:php",

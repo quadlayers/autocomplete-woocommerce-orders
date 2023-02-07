@@ -1,6 +1,6 @@
 {
 	"core": "WordPress/WordPress",
-	"plugins": ["."],
+	"plugins": ["./autocomplete-woocommerce-orders/"],
 	"config": {
 		"WP_DEBUG_DISPLAY": true
 	}
