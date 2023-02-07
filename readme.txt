@@ -1,13 +1,15 @@
 === Autocomplete WooCommerce Orders ===
 Contributors: quadlayers
+Donate link: https://quadlayers.com/portfolio/woocommerce-autocomplete-orders/
 Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
-Requires at least: 3.4
+Requires at least: 4.7
+Requires PHP: 5.6
 Tested up to: 6.1
-Stable tag: 2.0.3
-WC requires at least: 3.1.0
-WC tested up to: 7.2
+Stable tag: 2.0.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+WC requires at least: 4.7.0
+WC tested up to: 7.3
 
 Autocomplete your WooCommerce v2+/v3+ orders with ease.
 
@@ -57,6 +59,9 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 2.0.4 =
+* WooCommerce compatibility
 
 = 2.0.3 =
 * WooCommerce compatibility
