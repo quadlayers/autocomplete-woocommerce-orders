@@ -8,9 +8,6 @@
 
 namespace QuadLayers\ACO;
 
-use QuadLayers\ACO\Backend\Settings;
-use QuadLayers\ACO\Frontend\Frontend;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -21,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @class ACO
  * @version 1.0.0
  */
-class Plugin {
+final class Plugin {
 
 	/**
 	 * The single instance of the class.
@@ -35,31 +32,30 @@ class Plugin {
 	 * Construct
 	 */
 	private function __construct() {
+
 		/**
-		 * Interfaces.
+		 * Load plugin textdomain.
 		 */
-		new Settings();
-		new Frontend();
+		load_plugin_textdomain( 'autocomplete-woocommerce-orders', false, ACO_PLUGIN_DIR . '/languages/' );
 
-		add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
-	}
-
-	/**
-	 * Cloning is forbidden.
-	 *
-	 * @since 1.0
-	 */
-	public function __clone() {
-		wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'autocomplete-woocommerce-orders' ), '1.1' );
-	}
-
-	/**
-	 * Unserializing instances of this class is forbidden.
-	 *
-	 * @since 1.0
-	 */
-	public function __wakeup() {
-		wc_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'autocomplete-woocommerce-orders' ), '2.1' );
+		/**
+		 * Load plugin files on WooCommerce init
+		 */
+		add_action(
+			'woocommerce_init',
+			function () {
+				/**
+				 * Interfaces.
+				 */
+				new Backend\Settings();
+				new Frontend\Frontend();
+				/**
+				 * Add premium CSS
+				 */
+				add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
+				do_action( 'aco_init' );
+			}
+		);
 	}
 
 	/**
@@ -67,7 +63,8 @@ class Plugin {
 	 *
 	 * @since 1.0
 	 */
-	public static function add_premium_css() {        ?>
+	public static function add_premium_css() {
+		?>
 		<style>
 			.aco-premium-field {
 				opacity: 0.5;
@@ -105,11 +102,8 @@ class Plugin {
 	}
 }
 
-/**
- * Initialize plugin.
- */
-function plugin_init() {
-	 return Plugin::instance();
+function INIT() {
+	return Plugin::instance();
 }
 
-plugin_init();
+INIT();

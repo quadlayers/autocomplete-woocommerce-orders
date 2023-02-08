@@ -54,9 +54,22 @@ require_once __DIR__ . '/vendor_packages/wp-plugin-suggestions.php';
  */
 require_once __DIR__ . '/lib/class-plugin.php';
 
+/**
+ * Plugin activation hook
+ */
 register_activation_hook(
-	ACO_PLUGIN_FILE,
-	function () {
-		do_action( ACO_PREFIX . '_activation' );
+	__FILE__,
+	function() {
+		do_action( 'aco_activation' );
+	}
+);
+
+/**
+ * Plugin activation hook
+ */
+register_deactivation_hook(
+	__FILE__,
+	function() {
+		do_action( 'aco_deactivation' );
 	}
 );
