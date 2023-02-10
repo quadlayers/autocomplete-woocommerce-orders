@@ -17,4 +17,4 @@ playwright-report
 playwright
 #Zip
 *.zip
-/autocomplete-woocommerce-orders/
+.plugin

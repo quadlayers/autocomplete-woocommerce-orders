@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  *   Definition globals variables
  */
