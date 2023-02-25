@@ -32,7 +32,6 @@ final class Plugin {
 	 * Construct
 	 */
 	private function __construct() {
-
 		/**
 		 * Load plugin textdomain.
 		 */

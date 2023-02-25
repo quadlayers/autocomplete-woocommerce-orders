@@ -1,6 +1,6 @@
 <?php
 
-if ( class_exists( 'QuadLayers\\WP_Plugin_Table_Links\\Load' ) ) {
+if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 	/**
 	 *  Promote constants
 	 */
@@ -19,7 +19,7 @@ if ( class_exists( 'QuadLayers\\WP_Plugin_Table_Links\\Load' ) ) {
 	 * Notice cross sell 1
 	 */
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_SLUG', 'woocommerce-checkout-manager' );
-	define( 'ACO_PROMOTE_CROSS_INSTALL_1_NAME', 'Checkout Manager' );
+	define( 'ACO_PROMOTE_CROSS_INSTALL_1_NAME', 'WooCommerce Checkout Manager' );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_DESCRIPTION', esc_html__( 'This plugin allows you to add custom fields to the checkout page, related to billing, shipping or additional fields sections.', 'autocomplete-woocommerce-orders' ) );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/portfolio/woocommerce-checkout-manager/?utm_source=aco_admin' );
 	/**
