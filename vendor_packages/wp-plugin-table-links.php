@@ -7,6 +7,7 @@ if ( class_exists( 'QuadLayers\\WP_Plugin_Table_Links\\Load' ) ) {
 			array(
 				'text' => esc_html__( 'Settings', 'autocomplete-woocommerce-orders' ),
 				'url'  => admin_url( 'admin.php?page=wc-settings&tab=silkwave_aco' ),
+				'target' => '_self',
 			),
 			array(
 				'text' => esc_html__( 'Premium', 'autocomplete-woocommerce-orders' ),
