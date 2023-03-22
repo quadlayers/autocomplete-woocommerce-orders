@@ -5,11 +5,11 @@ Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stri
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.1
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
-WC tested up to: 7.4
+WC tested up to: 7.5
 
 Autocomplete your WooCommerce v2+/v3+ orders with ease.
 
@@ -59,6 +59,9 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 3.0.5 =
+* Composer packages update
 
 = 3.0.4 =
 * Composer packages update
