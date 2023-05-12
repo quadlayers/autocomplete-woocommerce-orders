@@ -14,26 +14,9 @@
 			"php": "7.3.0"
 		},
 		"allow-plugins": {
-			"automattic/jetpack-composer-plugin": true,
-			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"quadlayers/wp-autoload": true
+			"quadlayers/wp-autoload": true,
+			"automattic/jetpack-composer-plugin": true
 		}
-	},
-	"autoload": {
-		"classmap": [
-			"lib/"
-		]
-	},
-	"autoload-dev": {
-		"exclude-from-classmap": [
-			"lib/"
-		]
-	},
-	"extra": {
-		"quadlayers/wp-autoload": {
-			"QuadLayers\\ACO": "lib/"
-		},
-		"wp-plugin-slug": "autocomplete-woocommerce-orders"
 	},
 	"require": {
 		"php": ">=7.1.0",
@@ -45,12 +28,24 @@
 		"quadlayers/wp-plugin-table-links": "*",
 		"quadlayers/wp-plugin-suggestions": "*"
 	},
+	"autoload": {
+		"classmap": [
+			"lib/"
+		]
+	},
+	"autoload-dev": {
+		"exclude-from-classmap": [
+			"lib/"
+		]
+	},
 	"require-dev": {
-		"woocommerce/woocommerce-sniffs": "^0.1.3",
-		"phpunit/phpunit": "^9.5",
 		"quadlayers/wp-autoload": "*"
 	},
-	"scripts": {
-		"test:phpunit": "./vendor/bin/phpunit phpunit"
-	}
+	"extra": {
+		"quadlayers/wp-autoload": {
+			"QuadLayers\\ACO": "lib/"
+		},
+		"wp-plugin-slug": "autocomplete-woocommerce-orders"
+	},
+	"scripts": {}
 }
