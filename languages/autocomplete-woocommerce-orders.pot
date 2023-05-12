@@ -1,153 +1,42 @@
-#, fuzzy
+# Copyright (C) 2023 QuadLayers
+# This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Autocomplete WooCommerce Orders\n"
-"POT-Creation-Date: 2023-02-25 20:07-0300\n"
-"PO-Revision-Date: 2020-09-17 10:38-0300\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: Autocomplete WooCommerce Orders 3.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/autocomplete-woocommerce-orders\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: autocomplete-woocommerce-orders.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"POT-Creation-Date: 2023-05-12T15:00:44+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: autocomplete-woocommerce-orders\n"
 
-#. translators: %s is the script handle.
-#: jetpack_vendor/automattic/jetpack-assets/src/class-assets.php:389
-#, php-format
-msgid "Script \"%s\" depends on wp-i18n but does not specify \"textdomain\""
+#. Plugin Name of the plugin
+msgid "Autocomplete WooCommerce Orders"
 msgstr ""
 
-#. translators: 1: wp_default_scripts. 2: Name of the domain being aliased.
-#: jetpack_vendor/automattic/jetpack-assets/src/class-assets.php:554
-#, php-format
-msgid ""
-"Textdomain aliases should be registered before the %1$s hook. This notice "
-"was triggered by the %2$s domain."
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/autocomplete-woocommerce-orders/"
 msgstr ""
 
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:71
-msgid ""
-"Hi! We are Quadlayers! We’re a team of international people who have been "
-"working in the WordPress sphere for the last ten years."
+#. Description of the plugin
+msgid "Autocomplete your WooCommerce orders with ease. This plugins works with most major payment providers including PayPal, SagePay and Stripe."
 msgstr ""
 
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:74
-msgid "More products"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:97
-msgid "Untitled"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:125
-msgid "Read more like this on our blog"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:148
-#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:154
-msgid ""
-"An error has occurred, which probably means the feed is down. Try again later"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:296
-#, php-format
-msgid "Unknow notice index %s"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:300
-#, php-format
-msgid "Notice index %s removed"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Traits/PluginActions.php:36
-msgid "Activate"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Traits/PluginActions.php:43
-msgid "Install"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:99
-#, php-format
-msgid "Activate % s"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:100
-#, php-format
-msgid "%1$s not working because you need to activate the %2$s plugin . "
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:113
-#, php-format
-msgid "Install % s"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:114
-#, php-format
-msgid "%1$s not working because you need to install the %2$s plugin . "
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:78
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:93
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:94
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:47
-#: lib/backend/view/header.php:11 lib/backend/view/tabs.php:14
-msgid "Suggestions"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:157
-msgid "Search Results"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:160
-msgctxt "Plugin Installer"
-msgid "Beta Testing"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:162
-msgctxt "Plugin Installer"
-msgid "Featured"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:163
-msgctxt "Plugin Installer"
-msgid "Popular"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:164
-msgctxt "Plugin Installer"
-msgid "Recommended"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:165
-msgctxt "Plugin Installer"
-msgid "Favorites"
-msgstr ""
-
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:50
-#: lib/backend/view/header.php:13
-msgid ""
-"Thanks for using our product! We recommend these extensions that will add "
-"new features to stand out your business and improve your sales."
-msgstr ""
-
-#. Author of the plugin/theme
-#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:79
+#. Author of the plugin
 #: lib/backend/view/header.php:37
 msgid "QuadLayers"
 msgstr ""
 
-#: lib/backend/class-settings.php:190 lib/backend/class-settings.php:217
+#. Author URI of the plugin
+msgid "https://quadlayers.com"
+msgstr ""
+
+#: lib/backend/class-settings.php:190
+#: lib/backend/class-settings.php:217
 msgid "Autocomplete Orders"
 msgstr ""
 
@@ -196,8 +85,7 @@ msgid "Cash on delivery"
 msgstr ""
 
 #: lib/backend/class-settings.php:262
-msgid ""
-"Default order status for Cash on delivery orders without downloadable items."
+msgid "Default order status for Cash on delivery orders without downloadable items."
 msgstr ""
 
 #: lib/backend/class-settings.php:271
@@ -205,8 +93,7 @@ msgid "Cash on delivery (Downloadable)"
 msgstr ""
 
 #: lib/backend/class-settings.php:273
-msgid ""
-"Default order status for Cash on delivery orders with downloadable items."
+msgid "Default order status for Cash on delivery orders with downloadable items."
 msgstr ""
 
 #: lib/backend/class-settings.php:282
@@ -221,94 +108,75 @@ msgstr ""
 msgid "Select an order status"
 msgstr ""
 
-#: lib/backend/view/header.php:16 lib/backend/view/tabs.php:13
-#: vendor_packages/wp-plugin-table-links.php:22
+#: lib/backend/view/header.php:11
+#: lib/backend/view/tabs.php:14
+msgid "Suggestions"
+msgstr ""
+
+#: lib/backend/view/header.php:13
+msgid "Thanks for using our product! We recommend these extensions that will add new features to stand out your business and improve your sales."
+msgstr ""
+
+#: lib/backend/view/header.php:16
+#: lib/backend/view/tabs.php:13
+#: vendor_packages/wp-plugin-table-links.php:23
 msgid "Documentation"
 msgstr ""
 
-#: lib/backend/view/tabs.php:10 vendor_packages/wp-plugin-table-links.php:8
+#: lib/backend/view/tabs.php:10
+#: vendor_packages/wp-plugin-table-links.php:8
 msgid "Settings"
 msgstr ""
 
-#: lib/backend/view/tabs.php:11 vendor_packages/wp-plugin-table-links.php:12
+#: lib/backend/view/tabs.php:11
+#: vendor_packages/wp-plugin-table-links.php:13
 msgid "Premium"
 msgstr ""
 
-#: lib/backend/view/tabs.php:12 vendor_packages/wp-plugin-table-links.php:17
+#: lib/backend/view/tabs.php:12
+#: vendor_packages/wp-plugin-table-links.php:18
 msgid "Support"
 msgstr ""
 
 #: vendor_packages/wp-notice-plugin-promote.php:23
-msgid ""
-"This plugin allows you to add custom fields to the checkout page, related to "
-"billing, shipping or additional fields sections."
+msgid "This plugin allows you to add custom fields to the checkout page, related to billing, shipping or additional fields sections."
 msgstr ""
 
 #: vendor_packages/wp-notice-plugin-promote.php:30
-msgid ""
-"It allows you to reduce the steps in the checkout process by skipping the "
-"shopping cart page. This can encourage buyers to shop more and quickly. You "
-"will increase your sales reducing cart abandonment."
+msgid "It allows you to reduce the steps in the checkout process by skipping the shopping cart page. This can encourage buyers to shop more and quickly. You will increase your sales reducing cart abandonment."
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:42
-#, php-format
+#: vendor_packages/wp-notice-plugin-promote.php:41
 msgid "Hello! Thank you for choosing the %s plugin!"
 msgstr ""
 
 #: vendor_packages/wp-notice-plugin-promote.php:47
-msgid ""
-"Could you please give it a 5-star rating on WordPress?. Your feedback will "
-"boost our motivation and help us promote and continue to improve this "
-"product."
+msgid "Could you please give it a 5-star rating on WordPress?. Your feedback will boost our motivation and help us promote and continue to improve this product."
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:50
+#: vendor_packages/wp-notice-plugin-promote.php:49
 msgid "Yes, of course!"
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:55
+#: vendor_packages/wp-notice-plugin-promote.php:54
 msgid "Report a bug"
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:64
+#: vendor_packages/wp-notice-plugin-promote.php:63
 msgid "Hello! We have a special gift!"
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:69
-#, php-format
-msgid ""
-"Today we want to make you a special gift. Using the coupon code %1$s before "
-"the next 48 hours you can get a 20 percent discount on the premium version "
-"of the %2$s plugin."
+#: vendor_packages/wp-notice-plugin-promote.php:68
+msgid "Today we want to make you a special gift. Using the coupon code %1$s before the next 48 hours you can get a 20 percent discount on the premium version of the %2$s plugin."
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:77
-#: vendor_packages/wp-notice-plugin-promote.php:95
-#: vendor_packages/wp-notice-plugin-promote.php:113
+#: vendor_packages/wp-notice-plugin-promote.php:76
+#: vendor_packages/wp-notice-plugin-promote.php:94
+#: vendor_packages/wp-notice-plugin-promote.php:112
 msgid "More info!"
 msgstr ""
 
-#: vendor_packages/wp-notice-plugin-promote.php:87
-#: vendor_packages/wp-notice-plugin-promote.php:105
-#, php-format
+#: vendor_packages/wp-notice-plugin-promote.php:86
+#: vendor_packages/wp-notice-plugin-promote.php:104
 msgid "Hello! We want to invite you to try our %s plugin!"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Autocomplete WooCommerce Orders"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://wordpress.org/plugins/autocomplete-woocommerce-orders/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Autocomplete your WooCommerce orders with ease. This plugins works with most "
-"major payment providers including PayPal, SagePay and Stripe."
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://quadlayers.com"
 msgstr ""
