@@ -5,7 +5,7 @@ Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stri
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.2
-Stable tag: 3.0.9
+Stable tag: 3.1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
@@ -59,6 +59,9 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 3.1.0 =
+* PHP errors
 
 = 3.0.9 =
 * WooCommerce compatibility
