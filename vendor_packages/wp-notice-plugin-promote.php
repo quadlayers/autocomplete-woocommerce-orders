@@ -21,14 +21,14 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_SLUG', 'woocommerce-checkout-manager' );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_NAME', 'WooCommerce Checkout Manager' );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_1_DESCRIPTION', esc_html__( 'This plugin allows you to add custom fields to the checkout page, related to billing, shipping or additional fields sections.', 'autocomplete-woocommerce-orders' ) );
-	define( 'ACO_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/portfolio/woocommerce-checkout-manager/?utm_source=aco_admin' );
+	define( 'ACO_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/woocommerce-checkout-manager/?utm_source=aco_admin' );
 	/**
 	 * Notice cross sell 2
 	 */
 	define( 'ACO_PROMOTE_CROSS_INSTALL_2_SLUG', 'woocommerce-direct-checkout' );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_2_NAME', 'WooCommerce Direct Checkout' );
 	define( 'ACO_PROMOTE_CROSS_INSTALL_2_DESCRIPTION', esc_html__( 'It allows you to reduce the steps in the checkout process by skipping the shopping cart page. This can encourage buyers to shop more and quickly. You will increase your sales reducing cart abandonment.', 'autocomplete-woocommerce-orders' ) );
-	define( 'ACO_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/portfolio/woocommerce-direct-checkout/?utm_source=aco_admin' );
+	define( 'ACO_PROMOTE_CROSS_INSTALL_2_URL', 'https://quadlayers.com/products/woocommerce-direct-checkout/?utm_source=aco_admin' );
 
 	new \QuadLayers\WP_Notice_Plugin_Promote\Load(
 		ACO_PLUGIN_FILE,
