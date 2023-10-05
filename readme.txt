@@ -5,7 +5,7 @@ Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stri
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.3
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
@@ -13,11 +13,11 @@ WC tested up to: 8.1
 
 Autocomplete your WooCommerce v2+/v3+ orders with ease.
 
-== Presentation ==
+== Description ==
 
 [Premium](https://quadlayers.com/products/woocommerce-autocomplete-orders/) | [Documentation](https://quadlayers.com/documentation/woocommerce-autocomplete-orders/) | [Community](https://www.facebook.com/groups/quadlayers/)
 
-== Description ==
+== Presentation ==
 Install this plugin and automatically complete your WooCommerce orders automatically. This plugin is compatible with WooCommerce 2 and 3+ and works with all major payment providers including PayPal, SagePay and Stripe.
 
 * Paid orders of virtual products only: orders containing "Virtual" products only will be completed upon successful payment.
@@ -60,7 +60,7 @@ Please test the followings:
 
 == Changelog ==
 
-= 3.1.5 =
+= 3.1.6 =
 * Update portfolio link
 
 = 3.1.4 =
