@@ -1,23 +1,23 @@
 === Autocomplete WooCommerce Orders ===
 Contributors: quadlayers
-Donate link: https://quadlayers.com/portfolio/woocommerce-autocomplete-orders/
+Donate link: https://quadlayers.com/products/woocommerce-autocomplete-orders/
 Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.1
-Stable tag: 2.0.4
+Tested up to: 6.4
+Stable tag: 3.1.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
-WC tested up to: 7.3
+WC tested up to: 8.4
 
 Autocomplete your WooCommerce v2+/v3+ orders with ease.
 
-== Presentation ==
-
-[Premium](https://quadlayers.com/portfolio/woocommerce-autocomplete-orders/) | [Documentation](https://quadlayers.com/documentation/woocommerce-autocomplete-orders/) | [Community](https://www.facebook.com/groups/quadlayers/)
-
 == Description ==
+
+[Premium](https://quadlayers.com/products/woocommerce-autocomplete-orders/) | [Documentation](https://quadlayers.com/documentation/woocommerce-autocomplete-orders/) | [Community](https://www.facebook.com/groups/quadlayers/)
+
+== Presentation ==
 Install this plugin and automatically complete your WooCommerce orders automatically. This plugin is compatible with WooCommerce 2 and 3+ and works with all major payment providers including PayPal, SagePay and Stripe.
 
 * Paid orders of virtual products only: orders containing "Virtual" products only will be completed upon successful payment.
@@ -60,8 +60,60 @@ Please test the followings:
 
 == Changelog ==
 
-= 2.0.4 =
+= 3.1.9 =
+* FIx PHP errors
+
+= 3.1.8 =
 * WooCommerce compatibility
+
+= 3.1.7 =
+* WooCommerce compatibility
+
+= 3.1.6 =
+* Update portfolio link
+
+= 3.1.4 =
+* WooCommerce compatibility
+
+= 3.1.3 =
+* WooCommerce compatibility
+* WordPress compatibility
+
+= 3.1.2 =
+* WooCommerce compatibility
+
+=  3.1.1 = 
+* WooCommerce HPOS compatibility
+* WooCommerce COT compatibility
+
+= 3.1.0 =
+* PHP errors
+
+= 3.0.9 =
+* WooCommerce compatibility
+
+= 3.0.8 =
+* WooCommerce compatibility
+
+= 3.0.6 =
+* WooCommerce compatibility
+
+= 3.0.5 =
+* Composer packages update
+
+= 3.0.4 =
+* Composer packages update
+
+= 3.0.3 =
+* Composer packages update
+* Language package update
+
+= 3.0.2 =
+* Composer packages update
+* WooCommerce compatibility
+
+= 3.0.0 =
+* Refactor
 
 = 2.0.3 =
 * WooCommerce compatibility
