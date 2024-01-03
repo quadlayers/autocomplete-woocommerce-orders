@@ -1,13 +1,13 @@
-const fs = require('fs');
+const fs = require( 'fs' );
 
 const {
 	pluginFolder,
 	pluginFiles,
 	deleteThisFrom,
 	copyFromTo,
-} = require('./helpers/functions');
+} = require( './helpers/functions' );
 
-const { consoleSuccess } = require('./helpers/console');
+const { consoleSuccess } = require( './helpers/console' );
 
 /**
  * Execute:
@@ -15,20 +15,20 @@ const { consoleSuccess } = require('./helpers/console');
  *	Create new pluginFolder folder
  *	Copy files and folders in pluginFolder folder
  */
-fs.rm(pluginFolder, { recursive: true }, (err) => {
+fs.rm( pluginFolder, { recursive: true }, ( err ) => {
 	//Show status
-	err ?? consoleSuccess(`${pluginFolder} deleted`);
+	err ?? consoleSuccess( `${ pluginFolder } deleted` );
 	//Create pluginName folder
-	fs.mkdir(pluginFolder, { recursive: true }, (err) => {
+	fs.mkdir( pluginFolder, { recursive: true }, ( err ) => {
 		//Show status
-		err ?? consoleSuccess(`${pluginFolder} created`);
+		err ?? consoleSuccess( `${ pluginFolder } created` );
 
 		//Copy files and folders in pluginName folder
-		for (const file of pluginFiles) {
-			copyFromTo(file, pluginFolder);
+		for ( const file of pluginFiles ) {
+			copyFromTo( file, pluginFolder );
 		}
 
 		//Delete files and folders in pluginName folder
-		deleteThisFrom('/vendor/bin', pluginFolder);
-	});
-});
+		deleteThisFrom( '/vendor/bin', pluginFolder );
+	} );
+} );

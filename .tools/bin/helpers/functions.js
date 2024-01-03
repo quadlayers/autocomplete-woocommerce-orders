@@ -1,22 +1,22 @@
-const fs = require('fs');
-const path = require('path');
-const archiver = require('archiver');
-const { promisify } = require('util');
+const fs = require( 'fs' );
+const path = require( 'path' );
+const archiver = require( 'archiver' );
+const { promisify } = require( 'util' );
 
-const mkdir = promisify(fs.mkdir);
-const rename = promisify(fs.rename);
-const rmdir = promisify(fs.rmdir);
+const mkdir = promisify( fs.mkdir );
+const rename = promisify( fs.rename );
+const rmdir = promisify( fs.rmdir );
 // Get the base directory of the project
 const baseDir = process.cwd();
 
-const packageJson = require(path.join(baseDir, 'package.json'));
+const packageJson = require( path.join( baseDir, 'package.json' ) );
 const pluginName = packageJson.name;
 const pluginFolder = './.plugin/' + pluginName;
-const pluginFiles = packageJson.scaffolding?.zip?.filter((file) =>
-	fs.existsSync(path.join(baseDir, file))
+const pluginFiles = packageJson.scaffolding?.zip?.filter( ( file ) =>
+	fs.existsSync( path.join( baseDir, file ) )
 );
 
-const { consoleSuccess } = require('./console');
+const { consoleSuccess } = require( './console' );
 
 /**
  * Copy file from source to target.
@@ -24,50 +24,50 @@ const { consoleSuccess } = require('./console');
  * @param {string} source
  * @param {string} target
  */
-const copyFileFromTo = (source, target) => {
+const copyFileFromTo = ( source, target ) => {
 	// If target is a directory, a new file with the same name will be created
-	if (fs.existsSync(target)) {
-		if (fs.lstatSync(target).isDirectory()) {
-			target = path.join(target, path.basename(source));
+	if ( fs.existsSync( target ) ) {
+		if ( fs.lstatSync( target ).isDirectory() ) {
+			target = path.join( target, path.basename( source ) );
 		}
 	}
-	fs.writeFileSync(target, fs.readFileSync(source));
+	fs.writeFileSync( target, fs.readFileSync( source ) );
 };
 
-const compressFromTo = async (source, target) => {
-	const sourcePath = path.resolve(source);
-	const targetPath = path.resolve(target);
+const compressFromTo = async ( source, target ) => {
+	const sourcePath = path.resolve( source );
+	const targetPath = path.resolve( target );
 
 	// Create a temporary directory
-	const tempDir = path.join(path.dirname(sourcePath), 'temp');
-	await mkdir(tempDir);
+	const tempDir = path.join( path.dirname( sourcePath ), 'temp' );
+	await mkdir( tempDir );
 
 	// Move the source directory into the temporary directory
-	const tempSourcePath = path.join(tempDir, path.basename(sourcePath));
-	await rename(sourcePath, tempSourcePath);
+	const tempSourcePath = path.join( tempDir, path.basename( sourcePath ) );
+	await rename( sourcePath, tempSourcePath );
 
 	// Create a write stream for the zip file
-	const output = fs.createWriteStream(targetPath);
+	const output = fs.createWriteStream( targetPath );
 
 	// Create a new archiver instance
-	const archive = archiver('zip', {
+	const archive = archiver( 'zip', {
 		zlib: { level: 9 }, // Sets the compression level
-	});
+	} );
 
 	// Pipe the archiver output to the write stream
-	archive.pipe(output);
+	archive.pipe( output );
 
 	// Append the temporary directory to the archive
-	archive.directory(tempDir, false);
+	archive.directory( tempDir, false );
 
 	// Finalize the archive (i.e., finish adding files)
 	await archive.finalize();
 
 	// Move the source directory back to its original location
-	await rename(tempSourcePath, sourcePath);
+	await rename( tempSourcePath, sourcePath );
 
 	// Delete the temporary directory
-	await rmdir(tempDir, { recursive: true });
+	await rmdir( tempDir, { recursive: true } );
 };
 
 /**
@@ -76,51 +76,51 @@ const compressFromTo = async (source, target) => {
  * @param {string} source
  * @param {string} target
  */
-const copyFolderFromTo = (source, target) => {
+const copyFolderFromTo = ( source, target ) => {
 	// Check if folder needs to be created or integrated
-	const targetFolder = path.join(target, path.basename(source));
+	const targetFolder = path.join( target, path.basename( source ) );
 
 	// Create target folder if it doesn't exist
-	if (!fs.existsSync(targetFolder)) {
-		fs.mkdirSync(targetFolder);
+	if ( ! fs.existsSync( targetFolder ) ) {
+		fs.mkdirSync( targetFolder );
 	}
 	// Copy folder or folder files
-	if (fs.lstatSync(source).isDirectory()) {
-		const files = fs.readdirSync(source);
-		files.forEach(function (file) {
-			const filePath = path.join(source, file);
-			if (fs.lstatSync(filePath).isDirectory()) {
-				copyFolderFromTo(filePath, targetFolder);
+	if ( fs.lstatSync( source ).isDirectory() ) {
+		const files = fs.readdirSync( source );
+		files.forEach( function ( file ) {
+			const filePath = path.join( source, file );
+			if ( fs.lstatSync( filePath ).isDirectory() ) {
+				copyFolderFromTo( filePath, targetFolder );
 			} else {
-				copyFileFromTo(filePath, targetFolder);
+				copyFileFromTo( filePath, targetFolder );
 			}
-		});
+		} );
 	}
 };
 
-const cloneDirectory = (source, target) => {
+const cloneDirectory = ( source, target ) => {
 	// Ensure the target directory exists
-	if (!fs.existsSync(target)) {
-		fs.mkdirSync(target);
+	if ( ! fs.existsSync( target ) ) {
+		fs.mkdirSync( target );
 	}
 
 	// Get the list of items in the source directory
-	const items = fs.readdirSync(source);
+	const items = fs.readdirSync( source );
 
 	// Copy each item to the target directory
-	for (let item of items) {
-		const sourcePath = path.join(source, item);
-		const targetPath = path.join(target, item);
+	for ( let item of items ) {
+		const sourcePath = path.join( source, item );
+		const targetPath = path.join( target, item );
 
 		// Check if the item is a directory or a file
-		const stat = fs.statSync(sourcePath);
+		const stat = fs.statSync( sourcePath );
 
-		if (stat.isDirectory()) {
+		if ( stat.isDirectory() ) {
 			// If the item is a directory, copy it recursively
-			cloneDirectory(sourcePath, targetPath);
+			cloneDirectory( sourcePath, targetPath );
 		} else {
 			// If the item is a file, copy it directly
-			fs.copyFileSync(sourcePath, targetPath);
+			fs.copyFileSync( sourcePath, targetPath );
 		}
 	}
 };
@@ -131,39 +131,39 @@ const cloneDirectory = (source, target) => {
  * @param {string} source
  * @param {string} target
  */
-const copyFromTo = (source, target) => {
+const copyFromTo = ( source, target ) => {
 	// Check if is folder or file
-	if (fs.lstatSync(source).isDirectory()) {
-		copyFolderFromTo(source, target);
+	if ( fs.lstatSync( source ).isDirectory() ) {
+		copyFolderFromTo( source, target );
 	} else {
-		copyFileFromTo(source, target);
+		copyFileFromTo( source, target );
 	}
 };
 
-const moveFromTo = async (source, target) => {
+const moveFromTo = async ( source, target ) => {
 	try {
-		const sourcePath = path.resolve(source);
-		const targetPath = path.resolve(target);
+		const sourcePath = path.resolve( source );
+		const targetPath = path.resolve( target );
 
-		if (!fs.existsSync(targetPath)) {
-			fs.mkdirSync(targetPath);
+		if ( ! fs.existsSync( targetPath ) ) {
+			fs.mkdirSync( targetPath );
 		}
 
-		fs.rename(sourcePath, targetPath, function (err) {
-			if (err) throw err;
-		});
-	} catch (ex) {
-		console.error('Error moving folder', ex);
+		fs.rename( sourcePath, targetPath, function ( err ) {
+			if ( err ) throw err;
+		} );
+	} catch ( ex ) {
+		console.error( 'Error moving folder', ex );
 	}
 };
 
-const deleteThisFrom = async (source, target) => {
+const deleteThisFrom = async ( source, target ) => {
 	try {
-		fs.rm(target + source, { recursive: true }, (err) => {
-			err ?? consoleSuccess(`${target + source} deleted`);
-		});
-	} catch (ex) {
-		console.error('Error deleting folder', ex);
+		fs.rm( target + source, { recursive: true }, ( err ) => {
+			err ?? consoleSuccess( `${ target + source } deleted` );
+		} );
+	} catch ( ex ) {
+		console.error( 'Error deleting folder', ex );
 	}
 };
 
