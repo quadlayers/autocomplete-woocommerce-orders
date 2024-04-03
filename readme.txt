@@ -1,19 +1,21 @@
 === Autocomplete WooCommerce Orders ===
 Contributors: quadlayers
 Donate link: https://quadlayers.com/products/woocommerce-autocomplete-orders/
-Tags: WooCommerce, order, complete, virtual, autocomplete, sagepay, paypal, stripe
+Tags: WooCommerce, Order Autocomplete, Virtual Products, Payment Integration
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.4
-Stable tag: 3.2.1
+Tested up to: 6.5
+Stable tag: 3.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
-WC tested up to: 8.7
+WC tested up to: 8.8
 
-Autocomplete your WooCommerce v2+/v3+ orders with ease.
+Effortlessly autocomplete WooCommerce orders for virtual and physical products upon successful payment. Suitable for any WooCommerce store, enhancing checkout flow and customer satisfaction.
 
 == Description ==
+
+Enhance your WooCommerce store's efficiency with the Autocomplete WooCommerce Orders plugin. Automatically set orders to "Completed" upon payment confirmation, streamlining your sales process and reducing administrative overhead. Ideal for stores handling virtual goods, subscriptions, or any physical products.
 
 [Premium](https://quadlayers.com/products/woocommerce-autocomplete-orders/) | [Documentation](https://quadlayers.com/documentation/woocommerce-autocomplete-orders/) | [Community](https://www.facebook.com/groups/quadlayers/)
 
@@ -43,11 +45,13 @@ The premium version of WooCommerce Autocomplete Orders plugin offer you a wide r
 > * Autocomplete orders for Cash on delivery orders with downloadable products
 
 == Frequently Asked Questions ==
-= The plugin is not working =
+= Why isn't the plugin working? =
 Please test the followings:
 1. Navigate to WooCommerce > Settings > Autocomplete Orders and ensure that the mode under Autocomplete Orders is not set to off.
 2. Navigate to WooCommerce > Settings > Checkout > PayPal and ensure that your "PayPal Email" is the primary email of your [PayPal Account](https://www.paypal.com/myaccount/settings/).
 3. Activate [Payment Data Transfer](https://developer.paypal.com/docs/classic/products/payment-data-transfer/#get-started).
+= What payment gateways are supported by this plugin? =
+The plugin supports all major payment gateways that are compatible with WooCommerce. However, this plugin will only complete paid orders of the gateways that call the `woocommerce_payment_complete()` or `$order->payment_complete()` methods. Most payment methods, like PayPal and credit cards, will trigger this action. Since shipping and access to the products shouldn’t happen until payment is received, orders that haven’t been paid won’t be automatically completed. This means our plugin won’t automatically complete an order if your gateway is unable to recognize when a payment has been received.
 
 == Screenshots ==
 1. Set the products as "Virtual" products
@@ -59,6 +63,9 @@ Please test the followings:
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 3.3.0 =
+* WooCommerce compatibility
 
 = 3.2.1 =
 * WooCommerce compatibility

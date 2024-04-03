@@ -157,10 +157,12 @@ class Settings {
 							} else {
 								$product = null;
 							}
-							if ( $product && $product->is_virtual() ) {
-								$virtual = true;
+
+							if ( $product && ! $product->is_virtual() ) {
+								$virtual = false;
 								break;
 							}
+							$virtual = true;
 						}
 					}
 					if ( $virtual ) {
