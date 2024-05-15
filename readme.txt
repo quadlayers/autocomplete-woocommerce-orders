@@ -5,11 +5,11 @@ Tags: WooCommerce, Order Autocomplete, Virtual Products, Payment Integration
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.5
-Stable tag: 3.3.0
+Stable tag: 3.3.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.7.0
-WC tested up to: 8.8
+WC tested up to: 8.9
 
 Effortlessly autocomplete WooCommerce orders for virtual and physical products upon successful payment. Suitable for any WooCommerce store, enhancing checkout flow and customer satisfaction.
 
@@ -63,6 +63,9 @@ The plugin supports all major payment gateways that are compatible with WooComme
 7. Pick the mode that suits you best
 
 == Changelog ==
+
+= 3.3.1 =
+* WooCommerce compatibility
 
 = 3.3.0 =
 * WooCommerce compatibility
