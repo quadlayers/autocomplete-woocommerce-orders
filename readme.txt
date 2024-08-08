@@ -64,6 +64,9 @@ The plugin supports all major payment gateways that are compatible with WooComme
 
 == Changelog ==
 
+= 3.3.4 =
+* Update dependencies 
+
 = 3.3.3 =
 * WooCommerce compatibility
 
