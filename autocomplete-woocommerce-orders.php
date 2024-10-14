@@ -14,7 +14,7 @@
  * Tested up to:            6.6
  * Requires PHP:            5.6
  * WC requires at least:    4.0
- * WC tested up to:         9.2
+ * WC tested up to:         9.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -60,7 +60,7 @@ require_once __DIR__ . '/lib/class-plugin.php';
  */
 register_activation_hook(
 	__FILE__,
-	function() {
+	function () {
 		do_action( 'aco_activation' );
 	}
 );
@@ -70,7 +70,7 @@ register_activation_hook(
  */
 register_deactivation_hook(
 	__FILE__,
-	function() {
+	function () {
 		do_action( 'aco_deactivation' );
 	}
 );
@@ -80,10 +80,9 @@ register_deactivation_hook(
  */
 add_action(
 	'before_woocommerce_init',
-	function() {
+	function () {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
 			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 		}
 	}
 );
-
