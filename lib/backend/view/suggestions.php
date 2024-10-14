@@ -7,29 +7,29 @@
 
 ?>
 <style>
-  @media screen and (max-width: 2299px) and (min-width: 1600px) {
+	@media screen and (max-width: 2299px) and (min-width: 1600px) {
 
 	#the-list {
-	  display: flex;
-	  flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.plugin-card {
-	  margin: 8px !important;
-	  width: calc(50% - 4px - 16px) !important;
+		margin: 8px !important;
+		width: calc(50% - 4px - 16px) !important;
 	}
-  }
+	}
 </style>
 <?php require_once 'header.php'; ?>
 <div class="wrap" style="
-	 position: relative;
-	 margin: 25px 40px 0 20px;
-	 max-width: 1200px;">
-  <?php
+	position: relative;
+	margin: 25px 40px 0 20px;
+	max-width: 1200px;">
+	<?php
 	$wp_list_table = new ACO_Suggestions_List_Table();
 	$wp_list_table->prepare_items();
 	?>
-  <form id="plugin-filter" method="post" class="importer-item">
+	<form id="plugin-filter" method="post" class="importer-item">
 	<?php $wp_list_table->display(); ?>
-  </form>
+	</form>
 </div>
