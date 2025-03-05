@@ -35,7 +35,7 @@ final class Plugin {
 		/**
 		 * Load plugin textdomain.
 		 */
-		load_plugin_textdomain( 'autocomplete-woocommerce-orders', false, ACO_PLUGIN_DIR . '/languages/' );
+		add_action( 'init', array( $this, 'load_textdomain' ) );
 
 		/**
 		 * Load plugin files on WooCommerce init
@@ -55,6 +55,10 @@ final class Plugin {
 				do_action( 'aco_init' );
 			}
 		);
+	}
+
+	public function load_textdomain() {
+		load_plugin_textdomain( 'autocomplete-woocommerce-orders', false, ACO_PLUGIN_DIR . '/languages/' );
 	}
 
 	/**
