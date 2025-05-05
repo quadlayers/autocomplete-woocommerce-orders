@@ -4,7 +4,7 @@
  * Plugin Name:             Autocomplete WooCommerce Orders
  * Plugin URI:              https://wordpress.org/plugins/autocomplete-woocommerce-orders/
  * Description:             Autocomplete your WooCommerce orders with ease. This plugins works with most major payment providers including PayPal, SagePay and Stripe.
- * Version:                 3.4.2
+ * Version:                 3.4.3
  * Text Domain:             autocomplete-woocommerce-orders
  * Author:                  QuadLayers
  * Author URI:              https://quadlayers.com
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *   Definition globals variables
  */
 define( 'ACO_PLUGIN_NAME', 'Autocomplete WooCommerce Orders' );
-define( 'ACO_PLUGIN_VERSION', '3.4.2' );
+define( 'ACO_PLUGIN_VERSION', '3.4.3' );
 define( 'ACO_PLUGIN_FILE', __FILE__ );
 define( 'ACO_PLUGIN_DIR', __DIR__ . DIRECTORY_SEPARATOR );
 define( 'ACO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -47,6 +47,7 @@ require_once __DIR__ . '/vendor_packages/wp-dashboard-widget-news.php';
 require_once __DIR__ . '/vendor_packages/wp-plugin-table-links.php';
 require_once __DIR__ . '/vendor_packages/wp-notice-plugin-required.php';
 require_once __DIR__ . '/vendor_packages/wp-notice-plugin-promote.php';
+require_once __DIR__ . '/vendor_packages/wp-plugin-feedback.php';
 require_once __DIR__ . '/vendor_packages/wp-plugin-suggestions.php';
 require_once __DIR__ . '/vendor_packages/wp-plugin-install-tab.php';
 
