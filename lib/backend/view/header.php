@@ -13,7 +13,7 @@
 	<p class="about-text"><?php printf( esc_html__( 'Thanks for using our product! We recommend these extensions that will add new features to stand out your business and improve your sales.', 'autocomplete-woocommerce-orders' ), esc_html( ACO_PLUGIN_NAME ) ); ?></p>
 
 	<p class="about-text">
-		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_html( ACO_DOCUMENTATION_URL ), esc_html__( 'Documentation', 'autocomplete-woocommerce-orders' ) ); ?></a>
+		<?php printf( '<a href="%s" target="_blank">%s</a>', esc_url( 'https://quadlayers.com/documentation/woocommerce-autocomplete-orders/?utm_source=aco_plugin&utm_medium=admin_header&utm_campaign=documentation&utm_content=documentation_link' ), esc_html__( 'Documentation', 'autocomplete-woocommerce-orders' ) ); ?></a>
 	</p>
 
 	<?php
@@ -32,7 +32,7 @@
                display: inline-block;
                width: 140px;
                " class="wp-badge">%s</div></a>',
-		'https://quadlayers.com/?utm_source=aco_admin',
+		'https://quadlayers.com/?utm_source=aco_plugin&utm_medium=admin_header&utm_campaign=branding&utm_content=header_logo',
 		esc_url( plugins_url( '/assets/backend/img/quadlayers.jpg', ACO_PLUGIN_FILE ) ),
 		esc_html__( 'QuadLayers', 'autocomplete-woocommerce-orders' )
 	);
