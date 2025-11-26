@@ -51,7 +51,7 @@ final class Plugin {
 				/**
 				 * Add premium CSS
 				 */
-				add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
+				add_action( 'admin_footer', array( __CLASS__, 'add_premium_style' ) );
 				do_action( 'aco_init' );
 			}
 		);
@@ -66,7 +66,7 @@ final class Plugin {
 	 *
 	 * @since 1.0
 	 */
-	public static function add_premium_css() {
+	public static function add_premium_style() {
 		?>
 		<style>
 			.aco-premium-field {
